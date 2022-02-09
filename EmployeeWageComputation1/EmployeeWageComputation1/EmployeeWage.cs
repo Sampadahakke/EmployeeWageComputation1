@@ -15,6 +15,7 @@ namespace EmployeeWageComputation1
         const int Emp_Rate_Per_Hour = 20;
         public void EmployeeAttendance()
         {
+
             Random random = new Random();
             int EmpCheck = random.Next(0, 2);
 
@@ -30,8 +31,9 @@ namespace EmployeeWageComputation1
         }
 
 
-        //Calculation of Daily Wage
-        public void DailyWage()
+
+        //Calculation of Part Time Wage
+        public void PartTimeEmpWage()
         {
             int EmpHrs = 0;
             int EmpWage = 0;
@@ -40,16 +42,19 @@ namespace EmployeeWageComputation1
 
             if (EmpCheck == IS_FULL_TIME)
             {
-                Console.WriteLine("Employee is present");
                 EmpHrs = 8;
+            }
+            else if (EmpCheck == IS_PART_TIME)
+            {
+                EmpHrs = 4;
             }
             else
             {
-                Console.WriteLine("Employee is absent");
                 EmpHrs = 0;
             }
             EmpWage = EmpHrs * Emp_Rate_Per_Hour;
-            Console.WriteLine("Therefore EmpWage is " + EmpWage);
+            Console.WriteLine("Employeewage = " + EmpWage);
             Console.ReadLine();
-        }   }
-}   
+        }
+    }
+}
