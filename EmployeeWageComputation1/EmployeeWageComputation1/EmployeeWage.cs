@@ -13,7 +13,19 @@ namespace EmployeeWageComputation1
         const int IS_FULL_TIME = 1;
         const int IS_PART_TIME = 0;
         const int Emp_Rate_Per_Hour = 20;
-        public void EmployeeAttendance()
+        const int NUM_OF_WORKING_DAYS = 20;
+
+        int totalDayWorked;
+        int monthlyWage;
+
+        public EmployeeWage()
+        {
+            totalDayWorked = 0;
+            monthlyWage = 0;
+        }
+
+
+        private int EmployeeAttendance()
         {
 
             Random random = new Random();
@@ -21,19 +33,17 @@ namespace EmployeeWageComputation1
 
             if (EmpCheck == IS_PRESENT)
             {
-                Console.WriteLine("Employee is present");
+                return IS_PRESENT;
             }
             else
             {
-                Console.WriteLine("Employee is absent");
+                return IS_ABSENT;
             }
-            Console.ReadLine();
+
         }
 
-
-
         // Calculation of Employee Wage Using Switch Case
-        public void SwitchCase()
+        private int SwitchCase()
         {
             int EmpHrs = 0;
             int EmpWage = 0;
@@ -55,8 +65,23 @@ namespace EmployeeWageComputation1
                     break;
             }
             EmpWage = EmpHrs * Emp_Rate_Per_Hour;
-            Console.WriteLine("Employee Wage = " + EmpWage);
+            return EmpWage;
+        }
+
+
+        //Calculation of Monthly Wage
+
+        public void MonthlyWage()
+        {
+            for (int i = 0; i < NUM_OF_WORKING_DAYS; i++)
+                totalDayWorked += EmployeeAttendance();
+            for (int j = 0; j < totalDayWorked; j++)
+            {
+                monthlyWage += SwitchCase();
+            }
+            Console.WriteLine("Monthly Wage: " + monthlyWage);
             Console.ReadLine();
+
 
         }
     }
