@@ -16,13 +16,25 @@ namespace EmployeeWageComputation1
         const int NUM_OF_WORKING_DAYS = 20;
 
         int totalDayWorked;
+        int totalHourWorked;
         int monthlyWage;
 
         public EmployeeWage()
         {
             totalDayWorked = 0;
+            totalHourWorked = 0;
             monthlyWage = 0;
+
         }
+
+        public void Reset()
+        {
+            totalDayWorked = 0;
+            totalHourWorked = 0;
+            monthlyWage = 0;
+
+        }
+
 
 
         private int EmployeeAttendance()
@@ -79,10 +91,29 @@ namespace EmployeeWageComputation1
             {
                 monthlyWage += SwitchCase();
             }
+
+        }
+
+
+        //Hour and Wage Condition
+        public void Condition()
+        {
+            while (totalDayWorked != 20 && totalHourWorked < 100)
+            {
+                Reset();
+                MonthlyWage();
+            }
+        }
+
+        public void Display()
+        {
+            Console.WriteLine("Total Hours worked: " + totalHourWorked);
+            Console.WriteLine("Total Days worked: " + totalDayWorked);
             Console.WriteLine("Monthly Wage: " + monthlyWage);
             Console.ReadLine();
 
 
         }
+
     }
 }

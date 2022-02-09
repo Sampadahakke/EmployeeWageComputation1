@@ -12,7 +12,8 @@ namespace EmployeeWageComputation1
         {
             Console.WriteLine("Welcome to Employee Wage Computation");
             EmployeeWage employee = new EmployeeWage();
-            employee.MonthlyWage();
+            employee.Condition();
+            employee.Display();                                                   
             Console.ReadLine();
         }
     }
