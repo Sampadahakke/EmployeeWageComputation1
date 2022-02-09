@@ -32,29 +32,32 @@ namespace EmployeeWageComputation1
 
 
 
-        //Calculation of Part Time Wage
-        public void PartTimeEmpWage()
+        // Calculation of Employee Wage Using Switch Case
+        public void SwitchCase()
         {
             int EmpHrs = 0;
             int EmpWage = 0;
             Random random = new Random();
             int EmpCheck = random.Next(0, 2);
 
-            if (EmpCheck == IS_FULL_TIME)
+            switch (EmpCheck)
             {
-                EmpHrs = 8;
-            }
-            else if (EmpCheck == IS_PART_TIME)
-            {
-                EmpHrs = 4;
-            }
-            else
-            {
-                EmpHrs = 0;
+                case IS_PART_TIME:
+                    EmpHrs = 4;
+                    break;
+
+                case IS_FULL_TIME:
+                    EmpHrs = 8;
+                    break;
+
+                default:
+                    EmpHrs = 0;
+                    break;
             }
             EmpWage = EmpHrs * Emp_Rate_Per_Hour;
-            Console.WriteLine("Employeewage = " + EmpWage);
+            Console.WriteLine("Employee Wage = " + EmpWage);
             Console.ReadLine();
+
         }
     }
 }
