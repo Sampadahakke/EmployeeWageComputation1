@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputation1
 {
+    //Refactoring the code
     internal class EmployeeWage
     {
         const int IS_PRESENT = 1;
