@@ -11,9 +11,14 @@ namespace EmployeeWageComputation1
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Computation");
-            EmployeeWage employee = new EmployeeWage();
-            employee.Condition();
-            employee.Display();                                                   
+            //EmployeeWage employee = new EmployeeWage();
+            //employee.Condition();
+            //employee.Display();
+            //Creating object of company lis
+            CompanyList companyList = new CompanyList();
+            //Giving parameters for company
+            companyList.Company("Facebook", 50, 22, 120);
+            companyList.Display();
             Console.ReadLine();
         }
     }

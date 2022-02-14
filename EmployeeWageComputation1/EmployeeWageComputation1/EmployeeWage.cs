@@ -13,8 +13,9 @@ namespace EmployeeWageComputation1
         const int IS_ABSENT = 0;
         const int IS_FULL_TIME = 1;
         const int IS_PART_TIME = 0;
-        const int Emp_Rate_Per_Hour = 20;
-        const int NUM_OF_WORKING_DAYS = 20;
+        private readonly int  Emp_Rate_Per_Hour = 20;
+        private readonly int NUM_OF_WORKING_DAYS = 20;
+        private readonly int HOURS_PER_MONTH = 100;
 
         int totalDayWorked;
         int totalHourWorked;
@@ -34,6 +35,13 @@ namespace EmployeeWageComputation1
             totalHourWorked = 0;
             monthlyWage = 0;
 
+        }
+
+        public EmployeeWage(int ratePerHour, int maxWorkingDays, int maxHoursPerMonth)
+        {
+            Emp_Rate_Per_Hour = ratePerHour;
+            NUM_OF_WORKING_DAYS = maxWorkingDays;
+            HOURS_PER_MONTH = maxHoursPerMonth;
         }
 
 
@@ -114,6 +122,13 @@ namespace EmployeeWageComputation1
             Console.ReadLine();
 
 
+        }
+
+      
+        
+        public string GetValue()
+        {
+            return "Total Hours: " + totalHourWorked + "; Total Days: " + totalDayWorked + "; Total Wage: " + monthlyWage;
         }
 
     }
